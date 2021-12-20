@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/overagetxt"
+        android:layout_width="145dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="27dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Overage : "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalPerPersontxt" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="160dp"
+        android:text="clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/overageOutput" />
+
+    <TextView
+        android:id="@+id/overageOutput"
+        android:layout_width="204dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="16dp"
+        android:background="#DDDCDC"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalPerPersonOutput" />
+
+    <TextView
+        android:id="@+id/totalPerPersonOutput"
+        android:layout_width="204dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:background="#DDDCDC"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goButton" />
+
+    <TextView
+        android:id="@+id/totalWithTIpOutput"
+        android:layout_width="204dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="16dp"
+        android:background="#DDDCDC"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipAmountOutput" />
+
+    <TextView
+        android:id="@+id/billtxt"
+        android:layout_width="151dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Bill Total With Tax : "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/billInput"
+        android:layout_width="221dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:background="#D2ECC2"
+        android:ems="10"
+        android:fontFamily="sans-serif-black"
+        android:inputType="numberDecimal"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tipPercenttxt"
+        android:layout_width="127dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Tip Percent : "
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/billtxt" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="tipButton"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipPercenttxt">
+
+        <RadioButton
+            android:id="@+id/tip12"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:onClick="tipButton"
+            android:text="12%" />
+
+        <RadioButton
+            android:id="@+id/tip15"
+            android:layout_width="69dp"
+            android:layout_height="match_parent"
+            android:onClick="tipButton"
+            android:text="15%" />
+
+        <RadioButton
+            android:id="@+id/tip18"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:onClick="tipButton"
+            android:text="18%" />
+
+        <RadioButton
+            android:id="@+id/tip20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="tipButton"
+            android:text="20%" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tipAmouttxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Tip Amount :"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/tipAmountOutput"
+        android:layout_width="204dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="#DDDCDC"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/totalwithtiptxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="47dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Total With Tip : "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipAmouttxt" />
+
+    <TextView
+        android:id="@+id/numOfPeopletxt"
+        android:layout_width="151dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Number Of People : "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalwithtiptxt" />
+
+    <EditText
+        android:id="@+id/numOfPeopleInput"
+        android:layout_width="99dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:background="#D9F3D6"
+        android:ems="10"
+        android:fontFamily="sans-serif-black"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/numOfPeopletxt"
+        app:layout_constraintTop_toBottomOf="@+id/totalWithTIpOutput"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/goButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="16dp"
+        android:text="GO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalWithTIpOutput" />
+
+    <TextView
+        android:id="@+id/totalPerPersontxt"
+        android:layout_width="145dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="41dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Total Per Person : "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numOfPeopletxt" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
